@@ -3,13 +3,12 @@
 </script>
 
 <script lang="ts">
-	import { DateTime } from 'luxon';
 	// Components
 	import Branch from '$lib/components/Branch.svelte';
 	import Language from '$lib/components/Language.svelte';
 	import ProjectItem from '$lib/components/ProjectItem.svelte';
 	import Workspace from '$lib/components/Workspace.svelte';
-	import { getCodeData, getOtherActivities } from '$lib/rpcUtils';
+	import { getCodeData } from '$lib/rpcUtils';
 	import { useLanyard } from 'sk-lanyard';
 
 	const timeZone = 'America/New_York';
@@ -38,13 +37,12 @@
 	$: date = dateFormatter.format(now);
 	$: time = timeFormatter.format(now);
 
-	const data = useLanyard({ method: 'ws', id: '524722785302609941' });
+	const data = useLanyard({ method: 'ws', id: '219150672166125568' });
 	$: codeData = getCodeData($data);
-	$: otherActivities = getOtherActivities($data);
 </script>
 
 <svelte:head>
-	<title>portfolio</title>
+	<title>hi</title>
 	<meta name="og:title" content="portfolio" />
 	<meta name="description" content="a collection of various things" />
 	<meta name="og:description" content="a collection of various things" />
@@ -58,75 +56,18 @@
 	<div class="flex flex-col gap-7">
 		<div class="min-h-[3em] lg:min-h-0">
 			<h1 class="text-ocean-700 dark:text-ocean-300">
-				<span class="dark:text-ocean-blue">nebula</span>
+				<span class="dark:text-ocean-blue">jackson</span>
 				<Workspace workspace={codeData?.workspace} />
 				<Branch name={codeData?.branch} />
 				<Language lang={codeData?.lang} />
 			</h1>
 		</div>
 		<div>
-			<h1 class="text-ocean-900 dark:text-ocean-100">projects</h1>
-			<ul class="list-disc list-inside text-ocean-700 dark:text-ocean-blue">
-				<ProjectItem
-					href="https://github.com/nebulatgs/portfolio"
-					name="portfolio"
-					description="the thing"
-				/>
-				<ProjectItem
-					href="https://relaying.cloud"
-					name="relaying.cloud"
-					description="phone camera -> browser"
-				/>
-				<ProjectItem
-					href="https://github.com/nebulatgs/fade"
-					name="fade"
-					description="ephemeral virtual machines"
-				/>
-				<ProjectItem
-					href="https://github.com/nebulatgs/particulo"
-					name="particulo"
-					description="opengl particle sim library"
-				/>
-				<ProjectItem
-					href="https://graph.neb.bio"
-					name="graph"
-					description="webgl graphing calculator"
-				/>
-			</ul>
-		</div>
-		<div>
-			<h1 class="text-ocean-900 dark:text-ocean-100">ti84</h1>
-			<ul class="list-disc list-inside text-ocean-700 dark:text-ocean-blue">
-				<ProjectItem
-					href="https://github.com/nebulatgs/calc_boids"
-					name="boids"
-					description="boids in c++ on a calculator"
-				/>
-				<ProjectItem
-					href="https://github.com/nebulatgs/arrayvis_calc"
-					name="arrayvis"
-					description="sorting algorithm visualizer"
-				/>
-			</ul>
-		</div>
-		<div>
-			<h1 class="text-ocean-900 dark:text-ocean-100">old</h1>
-			<ul class="list-disc list-inside text-ocean-700 dark:text-ocean-blue">
-				<ProjectItem href="https://evosim.neb.bio" name="evosim" description="my first project" />
-				<ProjectItem
-					href="https://boids.neb.bio"
-					name="boids"
-					description="webassembly boid simulation"
-				/>
-				<ProjectItem href="https://solar.neb.bio" name="solar" description="n-body simulation" />
-			</ul>
-		</div>
-		<div>
 			<h1 class="text-ocean-900 dark:text-ocean-100">links</h1>
 			<ul class="list-disc list-inside text-ocean-700 dark:text-ocean-blue">
-				<ProjectItem href="https://twitter.com/nebulatgs" name="twitter" />
-				<ProjectItem href="https://github.com/nebulatgs" name="github" />
-				<ProjectItem href="mailto:nebula@kora.gg" name="email" />
+				<ProjectItem href="https://linkedin.com/in/atx" name="linkedin" />
+				<ProjectItem href="https://github.com/neverabsolute" name="github" />
+				<ProjectItem href="mailto:ayo@jackson.wtf" name="email" />
 			</ul>
 		</div>
 	</div>
@@ -171,22 +112,6 @@
 					<span class="text-ocean-700 dark:text-ocean-200">{codeData.lang}</span>
 				</span>
 			</div>
-		{/if}
-		{#if otherActivities}
-			{#each otherActivities as activity}
-				<div class="flex flex-col items-start sm:items-end">
-					<span class="text-ocean-700 dark:text-ocean-400"
-						>playing <span class="text-ocean-700 dark:text-ocean-200">{activity.name}</span>
-						{#if activity.start}
-							for {DateTime.fromJSDate(activity.start)
-								.toRelative({
-									base: DateTime.fromJSDate(now)
-								})
-								?.replace(' ago', '')}
-						{/if}
-					</span>
-				</div>
-			{/each}
 		{/if}
 	</div>
 </section>

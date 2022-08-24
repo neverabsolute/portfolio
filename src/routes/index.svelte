@@ -47,7 +47,7 @@
 	<meta name="description" content="a collection of various things" />
 	<meta name="og:description" content="a collection of various things" />
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f0f5" />
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#281c21" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#383838" />
 </svelte:head>
 
 <section

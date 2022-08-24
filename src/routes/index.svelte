@@ -1,8 +1,8 @@
-<script context="module" lang="ts">
+<script context='module' lang='ts'>
 	export const prerender = true;
 </script>
 
-<script lang="ts">
+<script lang='ts'>
 	// Components
 	import Branch from '$lib/components/Branch.svelte';
 	import Language from '$lib/components/Language.svelte';
@@ -43,73 +43,73 @@
 
 <svelte:head>
 	<title>hi</title>
-	<meta name="og:title" content="portfolio" />
-	<meta name="description" content="a collection of various things" />
-	<meta name="og:description" content="a collection of various things" />
-	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f0f5" />
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#383838" />
+	<meta name='og:title' content='portfolio' />
+	<meta name='description' content='a collection of various things' />
+	<meta name='og:description' content='a collection of various things' />
+	<meta name='theme-color' media='(prefers-color-scheme: light)' content='#f9f0f5' />
+	<meta name='theme-color' media='(prefers-color-scheme: dark)' content='#383838' />
 </svelte:head>
 
 <section
-	class="p-8 sm:p-12 lg:p-24 lg:py-16 font-cascadia z-10 flex flex-col sm:flex-row gap-y-10 justify-between"
+	class='p-8 sm:p-12 lg:p-24 lg:py-16 font-cascadia z-10 flex flex-col sm:flex-row gap-y-10 justify-between'
 >
-	<div class="flex flex-col gap-7">
-		<div class="min-h-[3em] lg:min-h-0">
-			<h1 class="text-ocean-700 dark:text-ocean-300">
-				<span class="dark:text-ocean-blue">jackson</span>
+	<div class='flex flex-col gap-7'>
+		<div class='min-h-[3em] lg:min-h-0'>
+			<h1 class='text-ocean-700 dark:text-ocean-300'>
+				<span class='dark:text-ocean-blue'>jackson</span>
 				<Workspace workspace={codeData?.workspace} />
 				<Branch name={codeData?.branch} />
 				<Language lang={codeData?.lang} />
 			</h1>
 		</div>
 		<div>
-			<h1 class="text-ocean-900 dark:text-ocean-100">links</h1>
-			<ul class="list-disc list-inside text-ocean-700 dark:text-ocean-blue">
-				<ProjectItem href="https://linkedin.com/in/atx" name="linkedin" />
-				<ProjectItem href="https://github.com/neverabsolute" name="github" />
-				<ProjectItem href="mailto:ayo@jackson.wtf" name="email" />
+			<h1 class='text-ocean-900 dark:text-ocean-100'>links</h1>
+			<ul class='list-disc list-inside text-ocean-700 dark:text-ocean-blue'>
+				<ProjectItem href='https://linkedin.com/in/atx' name='linkedin' />
+				<ProjectItem href='https://github.com/neverabsolute' name='github' />
+				<ProjectItem href='mailto:ayo@jackson.wtf' name='email' />
 			</ul>
 		</div>
 	</div>
 	<div
-		class="text-ocean-900 dark:text-ocean-300 flex flex-col items-start sm:items-end gap-3 sm:gap-7 sm:text-right"
+		class='text-ocean-900 dark:text-ocean-300 flex flex-col items-start sm:items-end gap-3 sm:gap-7 sm:text-right'
 	>
 		{#if !isTimeZoneSame}
 			<div
-				class="flex flex-col items-start sm:items-end hover:underline cursor-pointer"
+				class='flex flex-col items-start sm:items-end hover:underline cursor-pointer'
 				on:click={() => (timeZoneToggle = !timeZoneToggle)}
 			>
 				<span>{date}</span>
 				<span>{time}</span>
 			</div>
 		{:else}
-			<div class="flex flex-col items-start sm:items-end">
+			<div class='flex flex-col items-start sm:items-end'>
 				<span>{date}</span>
 				<span>{time}</span>
 			</div>
 		{/if}
 		{#if $data?.spotify}
-			<div class="flex flex-col items-start sm:items-end">
-				<span class="text-ocean-900 dark:text-ocean-100">{$data.spotify?.song}</span>
-				<span class="text-ocean-800 dark:text-ocean-300">{$data.spotify?.artist}</span>
-				<span class="text-ocean-700 dark:text-ocean-400">{$data.spotify?.album}</span>
+			<div class='flex flex-col items-start sm:items-end'>
+				<span class='text-ocean-900 dark:text-ocean-100'>{$data.spotify?.song}</span>
+				<span class='text-ocean-800 dark:text-ocean-300'>{$data.spotify?.artist}</span>
+				<span class='text-ocean-700 dark:text-ocean-400'>{$data.spotify?.album}</span>
 			</div>
 		{/if}
 		{#if codeData?.idling}
-			<div class="flex flex-col items-start sm:items-end">
-				<span class="text-ocean-900 dark:text-ocean-100">vsc</span>
-				<span class="text-ocean-700 dark:text-ocean-400">currently idling </span>
+			<div class='flex flex-col items-start sm:items-end'>
+				<span class='text-ocean-900 dark:text-ocean-100'>vsc</span>
+				<span class='text-ocean-700 dark:text-ocean-400'>currently idling </span>
 			</div>
 		{/if}
 		{#if codeData && !codeData.idling}
-			<div class="flex flex-col items-start sm:items-end">
-				<span class="text-ocean-900 dark:text-ocean-100">vsc</span>
-				<span class="text-ocean-800 dark:text-ocean-300"
+			<div class='flex flex-col items-start sm:items-end'>
+				<span class='text-ocean-900 dark:text-ocean-100'>vsc</span>
+				<span class='text-ocean-800 dark:text-ocean-300'
 					>{codeData.workspace}{codeData.branch ? `/${codeData.branch}` : ''}</span
 				>
-				<span class="text-ocean-700 dark:text-ocean-400"
+				<span class='text-ocean-700 dark:text-ocean-400'
 					>currently writing
-					<span class="text-ocean-700 dark:text-ocean-200">{codeData.lang}</span>
+					<span class='text-ocean-700 dark:text-ocean-200'>{codeData.lang}</span>
 				</span>
 			</div>
 		{/if}

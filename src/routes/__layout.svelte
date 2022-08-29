@@ -5,7 +5,7 @@
 	onMount(() => {
 		onblur = () => {
 			document.body.className =
-				'bg-[#f3f3f3] dark:bg-[#383838] motion-safe:transition-colors motion-safe:duration-300';
+				'bg-[#f3f3f3] dark:bg-[#282828] motion-safe:transition-colors motion-safe:duration-300';
 		};
 		onfocus = () => {
 			document.body.className =

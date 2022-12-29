@@ -11,7 +11,7 @@
 	import { getCodeData } from '$lib/rpcUtils';
 	import { useLanyard } from 'sk-lanyard';
 
-	const timeZone = 'America/New_York';
+	const timeZone = 'America/Chicago';
 	const isTimeZoneSame = Intl.DateTimeFormat().resolvedOptions().timeZone === timeZone;
 	let timeZoneToggle = false;
 

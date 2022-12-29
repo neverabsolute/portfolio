@@ -80,12 +80,12 @@
 				on:click={() => (timeZoneToggle = !timeZoneToggle)}
 			>
 				<span>{date}</span>
-				<span>{time}</span>
+				<span>{time} (Your Time)</span>
 			</div>
 		{:else}
 			<div class='flex flex-col items-start sm:items-end'>
 				<span>{date}</span>
-				<span>{time}</span>
+				<span>{time} (My Time)</span>
 			</div>
 		{/if}
 		{#if $data?.spotify}

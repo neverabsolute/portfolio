@@ -1,8 +1,8 @@
 <script lang="ts">
 	export let lang = '';
 
-	let nodeVersion = '16.16.0';
-	let rustVersion = '1.62.1';
+	let nodeVersion = '18.16.0';
+	let pythonVersion = '3.10.11';
 
 	let langMap: Record<string, string>;
 	$: langMap = {
@@ -10,9 +10,9 @@
 		jsx: `<span class="dark:text-ocean-green">  ${nodeVersion}</span>`,
 		ts: `<span class="dark:text-ocean-green">  ${nodeVersion}</span>`,
 		tsx: `<span class="dark:text-ocean-green">  ${nodeVersion}</span>`,
+		typescript: `<span class="dark:text-ocean-green">  ${nodeVersion}</span>`,
 		svelte: `<span class="dark:text-ocean-green">  ${nodeVersion}</span>`,
-
-		rust: `<span class="dark:text-ocean-rust"> 🦀 v${rustVersion}</span>`
+		python: `<span class="dark:text-ocean-blue"> 🐍 ${pythonVersion}</span>`,
 	};
 </script>
 

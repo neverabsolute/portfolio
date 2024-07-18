@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	export const prerender = true;
+	export const prerender = false;
 
 	import '../app.css';
 	onMount(() => {

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	export const prerender = true;
+
 	import '../app.css';
 	onMount(() => {
 		onblur = () => {

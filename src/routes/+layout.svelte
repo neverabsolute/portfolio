@@ -2,8 +2,6 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 
-	export const ssr = false;
-
 	onMount(() => {
 		onblur = () => {
 			document.body.className =

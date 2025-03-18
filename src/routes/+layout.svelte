@@ -9,7 +9,7 @@
 		};
 		onfocus = () => {
 			document.body.className =
-				'bg-[#f9f0f5] dark:bg-[#0f0f0f] motion-safe:transition-colors motion-safe:duration-300';
+				'bg-[#f9f0f5] dark:bg-[#202020] motion-safe:transition-colors motion-safe:duration-300';
 		};
 	});
 </script>
